@@ -20,7 +20,12 @@ const Navigation = ({ routes }: { routes: any }) => {
           if (route.path !== "/") {
             return (
               <Link to={route.path}>
-                <Typography key={index}>
+                <Typography
+                  key={index}
+                  color="secondary"
+                  font="600"
+                  type="title3"
+                >
                   {route.path.substring(1, 2).toUpperCase()}
                   {route.path.substring(2).toLowerCase()}
                 </Typography>

@@ -1,4 +1,4 @@
-import React, { Ref, forwardRef } from "react";
+import React, { Ref, forwardRef, useMemo } from "react";
 import {
   StyleSheet,
   StyleProp,
@@ -9,13 +9,15 @@ import {
   Platform,
 } from "react-native";
 
+import { getColors as colors } from "../../theme/colors";
+
 // import { ThemeColor, ThemeColorAlias, ThemeFont } from "@smartrent/types";
 
 // import { useTheme } from "../../utils/theme";
 
 export type TextThemeColor =
-  // Exclude<
-  //   ThemeColor | ThemeColorAlias,
+  | "primary"
+  | "secondary"
   | "white"
   | "gray050"
   | "gray100"
@@ -28,8 +30,24 @@ export type TextThemeColor =
   | "gray800"
   | "gray900"
   | "gray950"
-  | "black";
-// >;
+  | "black"
+  | "pink"
+  | "purple"
+  | "deepPurple"
+  | "indigo"
+  | "darkBlue"
+  | "blue"
+  | "lightBlue"
+  | "cyan"
+  | "teal"
+  | "green"
+  | "lightGreen"
+  | "lime"
+  | "yellow"
+  | "amber"
+  | "orange"
+  | "deepOrange"
+  | "brown";
 
 export type TextType =
   | "body"
@@ -69,27 +87,46 @@ export interface TypographyProps
  * example: https://smartrent-ui.com/components/general/typography
  */
 export const Typography = forwardRef(function Typography(
-  { color, font, style, ...rest }: TypographyProps,
+  { color, font, type = "body", style, ...rest }: TypographyProps,
   ref: Ref<RNText>
 ) {
-  // const { colors, fonts } = useTheme();
+  const colorStyle = useMemo(() => {
+    if (!color) {
+      return undefined;
+    }
+    return colors[color];
+  }, [color]);
 
-  // const colorStyle = useMemo(() => {
-  //   if (!color) return undefined;
-  //   return colors[color as ThemeColor];
-  // }, [colors, color]);
-
-  // const fontStyle = useMemo(() => {
-  //   if (!font) {
-  //     return undefined;
-  //   }
-  //   return fonts[font];
-  // }, [fonts, font]);
+  const textSize = useMemo(() => {
+    switch (type) {
+      case "body":
+        return 12;
+      case "bodyLarge":
+        return 18;
+      case "title":
+        return 32;
+      case "title2":
+        return 24;
+      case "title3":
+        return 20;
+      case "title4":
+        return 16;
+      case "title5":
+        return 14;
+      case "title6":
+        return 10;
+      default:
+        return undefined;
+    }
+  }, [type]);
 
   return (
     <RNText
       ref={ref}
-      style={[{ color: color }, { fontWeight: font }, style]}
+      style={[
+        { color: colorStyle, fontWeight: font, fontSize: textSize },
+        style,
+      ]}
       {...rest}
     />
   );
