@@ -1,10 +1,12 @@
 import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Switch, Route } from "react-router-dom";
+import { Layout, Navigation } from "./layout";
 
 const { height } = Dimensions.get("screen");
 
 const routes = require("react-router-routes-loader!./pages");
+console.log(routes);
 
 const App = () => {
   return (
@@ -20,9 +22,12 @@ const App = () => {
               path={route.path}
               exact={Boolean(route.exact)}
               render={(routeProps) => (
-                <View style={styles.container}>
-                  <route.component.default {...routeProps} />
-                </View>
+                <>
+                  <Navigation routes={routes} />
+                  <Layout>
+                    <route.component.default {...routeProps} />
+                  </Layout>
+                </>
               )}
             />
           );

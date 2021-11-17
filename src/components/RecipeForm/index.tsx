@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { Text, TextInput, Pressable, View, StyleSheet } from "react-native";
 import { Formik } from "formik";
-import { getColors } from "../../theme/colors";
+import { getColors as colors } from "../../theme/colors";
 
 interface RecipeFormProps {}
 
@@ -26,59 +26,59 @@ const Input = ({
   );
 };
 
-// const IngredientInput = (handleSubmit: (values: Ingredient) => void) => {
-//   return (
-//     <View style={{ marginTop: 8 }}>
-//       <Text style={{ textTransform: "capitalize", color: colors.primary }}>
-//         Add Ingredients
-//       </Text>
+const IngredientInput = (handleSubmit: any) => {
+  return (
+    <View style={{ marginTop: 8 }}>
+      <Text style={{ textTransform: "capitalize", color: colors.primary }}>
+        Add Ingredients
+      </Text>
 
-//       <Formik
-//         initialValues={{ name: "", quantity: "" }}
-//         onSubmit={handleSubmit}
-//       >
-//         {({ handleChange, handleBlur, values }) => (
-//           <View
-//             style={{
-//               flexDirection: "row",
-//               justifyContent: "space-between",
-//               alignItems: "center",
-//             }}
-//           >
-//             <TextInput
-//               style={[styles.inputs, { flex: 0.9 }]}
-//               placeholder="name"
-//               onChangeText={handleChange("name")}
-//               onBlur={handleBlur("name")}
-//               value={values.name}
-//             />
+      <Formik
+        initialValues={{ name: "", quantity: "" }}
+        onSubmit={handleSubmit}
+      >
+        {({ handleChange, handleBlur, values }) => (
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <TextInput
+              style={[styles.inputs, { flex: 0.9 }]}
+              placeholder="name"
+              onChangeText={handleChange("name")}
+              onBlur={handleBlur("name")}
+              value={values.name}
+            />
 
-//             <TextInput
-//               style={[styles.inputs, { width: 80 }]}
-//               placeholder="quantity"
-//               onChangeText={handleChange("quantity")}
-//               onBlur={handleBlur("quantity")}
-//               value={values.quantity}
-//             />
+            <TextInput
+              style={[styles.inputs, { width: 80 }]}
+              placeholder="quantity"
+              onChangeText={handleChange("quantity")}
+              onBlur={handleBlur("quantity")}
+              value={values.quantity}
+            />
 
-//             <Pressable
-//               style={[
-//                 styles.submit,
-//                 {
-//                   marginTop: 0,
-//                   paddingHorizontal: 16,
-//                 },
-//               ]}
-//               onPress={() => handleSubmit(values)}
-//             >
-//               <Text style={{ color: "white" }}>Add</Text>
-//             </Pressable>
-//           </View>
-//         )}
-//       </Formik>
-//     </View>
-//   );
-// };
+            <Pressable
+              style={[
+                styles.submit,
+                {
+                  marginTop: 0,
+                  paddingHorizontal: 16,
+                },
+              ]}
+              onPress={() => handleSubmit(values)}
+            >
+              <Text style={{ color: "white" }}>Add</Text>
+            </Pressable>
+          </View>
+        )}
+      </Formik>
+    </View>
+  );
+};
 
 interface Ingredient {
   name: string;
@@ -92,8 +92,6 @@ interface Recipe {
   directions: string;
 }
 
-const colors = getColors();
-
 function RecipeForm({}: RecipeFormProps) {
   const [recipeList, setRecipeList] = React.useState<Array<Recipe>>([]);
 
@@ -101,12 +99,12 @@ function RecipeForm({}: RecipeFormProps) {
     Array<Ingredient>
   >([]);
 
-  // const handleIngredientSubmit = useCallback(
-  //   (values: Ingredient) => {
-  //     setIngredientsList([...ingredientsList, values]);
-  //   },
-  //   [ingredientsList]
-  // );
+  const handleIngredientSubmit = useCallback(
+    (values: Ingredient) => {
+      setIngredientsList([...ingredientsList, values]);
+    },
+    [ingredientsList]
+  );
 
   const handleSubmit = (values: Recipe) => {
     console.log(values);
@@ -130,7 +128,7 @@ function RecipeForm({}: RecipeFormProps) {
 
             <Input label="Dish Name" />
             <Input label="description" multi />
-            {/* <IngredientInput handleSubmit={handleIngredientSubmit} /> */}
+            <IngredientInput handleSubmit={handleIngredientSubmit} />
 
             <View>
               {ingredientsList.map((ingredient, index) => (
@@ -167,12 +165,12 @@ const styles = StyleSheet.create({
     width: "50%",
     marginVertical: 16,
     padding: 8,
-    borderColor: colors.secondary,
+    borderColor: colors.primary,
     borderWidth: 1,
     borderRadius: 4,
   },
   title: {
-    color: colors.secondary,
+    color: colors.primary,
     fontSize: 24,
     textTransform: "capitalize",
     marginBottom: 8,
