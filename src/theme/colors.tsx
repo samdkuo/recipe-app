@@ -1,12 +1,49 @@
 const isLightMode = true;
 
-export const getColors = {
+export type TextThemeColor =
+  | "primary"
+  | "primaryMuted"
+  | "secondary"
+  | "tertiary"
+  | "background"
+  | "white"
+  | "gray050"
+  | "gray100"
+  | "gray200"
+  | "gray300"
+  | "gray400"
+  | "gray500"
+  | "gray600"
+  | "gray700"
+  | "gray800"
+  | "gray900"
+  | "gray950"
+  | "black"
+  | "pink"
+  | "purple"
+  | "deepPurple"
+  | "indigo"
+  | "darkBlue"
+  | "blue"
+  | "lightBlue"
+  | "cyan"
+  | "teal"
+  | "green"
+  | "lightGreen"
+  | "lime"
+  | "yellow"
+  | "amber"
+  | "orange"
+  | "deepOrange"
+  | "brown";
+
+export const colors = {
   // Elemental
-  // primary: "#4FA1C3",
   primary: "#f14b2c",
-  // secondary: "#DF336F",
+  primaryMuted: "#f46e53",
   secondary: "#ffc328",
-  primaryMuted: isLightMode ? "#D6EEF5" : "#0A3542",
+  tertiary: "#8fbb33",
+  background: "#fff1e6",
 
   // Grays
   white: "#FFFFFF",

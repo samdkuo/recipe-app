@@ -9,45 +9,11 @@ import {
   Platform,
 } from "react-native";
 
-import { getColors as colors } from "../../theme/colors";
+import { colors, TextThemeColor } from "../../theme/colors";
 
 // import { ThemeColor, ThemeColorAlias, ThemeFont } from "@smartrent/types";
 
 // import { useTheme } from "../../utils/theme";
-
-export type TextThemeColor =
-  | "primary"
-  | "secondary"
-  | "white"
-  | "gray050"
-  | "gray100"
-  | "gray200"
-  | "gray300"
-  | "gray400"
-  | "gray500"
-  | "gray600"
-  | "gray700"
-  | "gray800"
-  | "gray900"
-  | "gray950"
-  | "black"
-  | "pink"
-  | "purple"
-  | "deepPurple"
-  | "indigo"
-  | "darkBlue"
-  | "blue"
-  | "lightBlue"
-  | "cyan"
-  | "teal"
-  | "green"
-  | "lightGreen"
-  | "lime"
-  | "yellow"
-  | "amber"
-  | "orange"
-  | "deepOrange"
-  | "brown";
 
 export type TextType =
   | "body"

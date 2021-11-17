@@ -1,21 +1,20 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
+import { colors } from "../theme/colors";
+import { dimensions } from "./types";
 
 const Layout = ({ children }: { children: any }) => {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <View
+      style={{
+        backgroundColor: colors.background,
+        padding: dimensions.mainPadding,
+        minHeight: `calc(100vh - ${dimensions.headerHeight}px)`,
+      }}
+    >
+      {children}
+    </View>
+  );
 };
-
-const styles = StyleSheet.create({
-  nav: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  navLinks: {
-    flexDirection: "row",
-  },
-  container: {
-    padding: 16,
-  },
-});
 
 export default Layout;

@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { Text, TextInput, Pressable, View, StyleSheet } from "react-native";
 import { Formik } from "formik";
-import { getColors as colors } from "../../theme/colors";
+import { colors } from "../../theme/colors";
 
 interface RecipeFormProps {}
 
