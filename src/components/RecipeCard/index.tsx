@@ -1,4 +1,6 @@
+import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import { colors } from "../../theme/colors";
 
 interface RecipeCardProps {
   title: string;
@@ -15,6 +17,7 @@ function RecipeCard({ title, totalIngredients, cookTime }: RecipeCardProps) {
         borderColor: "#d9dddc",
         overflow: "hidden",
         width: 250,
+        backgroundColor: colors.gray050,
       }}
     >
       <Image

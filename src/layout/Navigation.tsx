@@ -16,6 +16,13 @@ const Navigation = ({ routes }: { routes: any }) => {
         paddingHorizontal: 16,
         backgroundColor: colors.primary,
         height: dimensions.headerHeight,
+        shadowColor: colors.primaryMuted,
+        shadowOpacity: 0.5,
+        shadowOffset: {
+          width: 16,
+          height: 16,
+        },
+        shadowRadius: 40,
       }}
     >
       <Link to="/">

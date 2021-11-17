@@ -43,7 +43,7 @@ export const colors = {
   primaryMuted: "#f46e53",
   secondary: "#ffc328",
   tertiary: "#8fbb33",
-  background: "#fff1e6",
+  background: "#fff0ea",
 
   // Grays
   white: "#FFFFFF",

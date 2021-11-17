@@ -164,10 +164,11 @@ const styles = StyleSheet.create({
   container: {
     width: "50%",
     marginVertical: 16,
-    padding: 8,
-    borderColor: colors.primary,
+    padding: 12,
+    borderColor: colors.gray200,
     borderWidth: 1,
-    borderRadius: 4,
+    borderRadius: 8,
+    backgroundColor: colors.white,
   },
   title: {
     color: colors.primary,
