@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Button, Image } from "react-native";
+import { View, Button, Image } from "react-native";
 import { Link } from "react-router-dom";
 
 import { Typography } from "../components";
@@ -7,7 +7,16 @@ import { getColors as colors } from "../theme/colors";
 
 const Navigation = ({ routes }: { routes: any }) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingHorizontal: 16,
+        padding: 8,
+        backgroundColor: colors.primary,
+      }}
+    >
       <Link to="/">
         <Image
           source={{ uri: "/logo.png" }}
@@ -15,16 +24,22 @@ const Navigation = ({ routes }: { routes: any }) => {
           style={{ width: 60, height: 60 }}
         />
       </Link>
-      <View style={styles.navContainer}>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          maxWidth: "30%",
+        }}
+      >
         {routes.map((route: any, index: number) => {
           if (route.path !== "/") {
             return (
-              <Link to={route.path}>
+              <Link to={route.path} style={{ textDecoration: "none" }}>
                 <Typography
                   key={index}
                   color="secondary"
                   font="600"
-                  type="title3"
+                  type="title4"
                 >
                   {route.path.substring(1, 2).toUpperCase()}
                   {route.path.substring(2).toLowerCase()}
@@ -45,24 +60,5 @@ const Navigation = ({ routes }: { routes: any }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 16,
-    padding: 8,
-    backgroundColor: colors.primary,
-  },
-  navContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "20%",
-  },
-  link: {
-    color: colors.secondary,
-  },
-});
 
 export default Navigation;
