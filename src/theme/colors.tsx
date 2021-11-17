@@ -41,7 +41,7 @@ export const colors = {
   // Elemental
   primary: "#f14b2c",
   primaryMuted: "#f46e53",
-  secondary: "#ffc328",
+  secondary: "#FFDB73",
   tertiary: "#8fbb33",
   background: "#fff0ea",
 

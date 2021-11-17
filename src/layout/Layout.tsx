@@ -7,9 +7,9 @@ const Layout = ({ children }: { children: any }) => {
   return (
     <View
       style={{
-        backgroundColor: colors.background,
-        padding: dimensions.mainPadding,
-        minHeight: `calc(100vh - ${dimensions.headerHeight}px)`,
+        backgroundColor: colors.secondary,
+        padding: 24,
+        minHeight: "100vh",
       }}
     >
       {children}

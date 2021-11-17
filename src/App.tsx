@@ -22,12 +22,10 @@ const App = () => {
               path={route.path}
               exact={Boolean(route.exact)}
               render={(routeProps) => (
-                <>
+                <Layout>
                   <Navigation routes={routes} />
-                  <Layout>
-                    <route.component.default {...routeProps} />
-                  </Layout>
-                </>
+                  <route.component.default {...routeProps} />
+                </Layout>
               )}
             />
           );
