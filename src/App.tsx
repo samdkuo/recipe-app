@@ -1,7 +1,7 @@
 import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Switch, Route } from "react-router-dom";
-import { Layout, Navigation } from "./layout";
+import { Layout } from "./layout";
 
 const { height } = Dimensions.get("screen");
 
@@ -22,8 +22,7 @@ const App = () => {
               path={route.path}
               exact={Boolean(route.exact)}
               render={(routeProps) => (
-                <Layout>
-                  <Navigation routes={routes} />
+                <Layout routes={routes}>
                   <route.component.default {...routeProps} />
                 </Layout>
               )}

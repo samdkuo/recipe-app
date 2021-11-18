@@ -13,7 +13,6 @@ const Navigation = ({ routes }: { routes: any }) => {
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        paddingHorizontal: 16,
         height: dimensions.headerHeight,
       }}
     >
