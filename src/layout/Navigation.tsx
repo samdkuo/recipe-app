@@ -37,7 +37,7 @@ const Navigation = ({ routes }: { routes: any }) => {
               <Link to={route.path} style={{ textDecoration: "none" }}>
                 <Typography
                   key={index}
-                  color="primary"
+                  color="tertiary"
                   font="600"
                   type="title4"
                 >

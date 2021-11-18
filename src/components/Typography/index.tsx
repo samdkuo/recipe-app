@@ -11,10 +11,6 @@ import {
 
 import { colors, TextThemeColor } from "../../theme/colors";
 
-// import { ThemeColor, ThemeColorAlias, ThemeFont } from "@smartrent/types";
-
-// import { useTheme } from "../../utils/theme";
-
 export type TextType =
   | "body"
   | "bodyLarge"
@@ -53,7 +49,7 @@ export interface TypographyProps
  * example: https://smartrent-ui.com/components/general/typography
  */
 export const Typography = forwardRef(function Typography(
-  { color, font, type = "body", style, ...rest }: TypographyProps,
+  { color = "text", font, type = "body", style, ...rest }: TypographyProps,
   ref: Ref<RNText>
 ) {
   const colorStyle = useMemo(() => {

@@ -2,6 +2,7 @@ import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Switch, Route } from "react-router-dom";
 import { Layout } from "./layout";
+import NotFound from "./pages/_404";
 
 const { height } = Dimensions.get("screen");
 
@@ -31,7 +32,7 @@ const App = () => {
         }
       )}
       <Route>
-        <View>Not Found</View>
+        <NotFound />
       </Route>
     </Switch>
   );

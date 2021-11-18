@@ -5,7 +5,7 @@ export type TextThemeColor =
   | "primaryMuted"
   | "secondary"
   | "tertiary"
-  | "background"
+  | "text"
   | "white"
   | "gray050"
   | "gray100"
@@ -39,11 +39,11 @@ export type TextThemeColor =
 
 export const colors = {
   // Elemental
-  primary: "#f06767",
-  primaryMuted: "##ed9067",
-  secondary: "#fbc36c",
-  tertiary: "#8fbb33",
-  background: "#fff0ea",
+  primary: "#fcd378",
+  primaryMuted: "#fcd4a8",
+  secondary: "#fc9f61",
+  tertiary: "#ff775c",
+  text: "#f7e8cc",
 
   // Grays
   white: "#FFFFFF",

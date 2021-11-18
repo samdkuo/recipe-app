@@ -1,13 +1,16 @@
 import React from "react";
-import { View } from "react-native";
-import RecipeCard from "../components/RecipeCard";
-import RecipeForm from "../components/RecipeForm";
+import { Image, View } from "react-native";
+import Layout from "../layout/Layout";
+import { Typography } from "../components/index";
 
 const Home = () => {
   return (
     <View>
-      <RecipeCard title={"Hamburger"} totalIngredients={10} cookTime={40} />
-      <RecipeForm />
+      <Image
+        source={{ uri: "../public/images/letsEatTransparent.png" }}
+        resizeMode="cover"
+        style={{ width: 90, height: 90 }}
+      />
     </View>
   );
 };
