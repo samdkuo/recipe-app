@@ -16,6 +16,7 @@
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-native-web": "^0.17.5",
     "react-router-dom": "^5.1.2",
     "react-router-routes-loader": "^0.2.1",

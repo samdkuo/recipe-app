@@ -39,9 +39,9 @@ export type TextThemeColor =
 
 export const colors = {
   // Elemental
-  primary: "#f14b2c",
-  primaryMuted: "#f46e53",
-  secondary: "#FFDB73",
+  primary: "#f06767",
+  primaryMuted: "##ed9067",
+  secondary: "#fbc36c",
   tertiary: "#8fbb33",
   background: "#fff0ea",
 

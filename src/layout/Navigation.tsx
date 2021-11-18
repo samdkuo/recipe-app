@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Button, Image } from "react-native";
+import { View, Image } from "react-native";
 import { Link } from "react-router-dom";
 
 import { Typography } from "../components";
-import { colors } from "../theme/colors";
 import { dimensions } from "./types";
 
 const Navigation = ({ routes }: { routes: any }) => {
@@ -14,13 +13,15 @@ const Navigation = ({ routes }: { routes: any }) => {
         justifyContent: "space-between",
         alignItems: "center",
         height: dimensions.headerHeight,
+        marginTop: 8,
+        marginBottom: 16,
       }}
     >
       <Link to="/">
         <Image
-          source={{ uri: "/letsEat.png" }}
+          source={{ uri: "images/letsEatTransparent.png" }}
           resizeMode="cover"
-          style={{ width: 80, height: 80 }}
+          style={{ width: 90, height: 90 }}
         />
       </Link>
       <View
@@ -47,14 +48,6 @@ const Navigation = ({ routes }: { routes: any }) => {
             );
           }
         })}
-      </View>
-      <View>
-        <Button
-          title="Sign In"
-          onPress={() => {
-            ("");
-          }}
-        />
       </View>
     </View>
   );
