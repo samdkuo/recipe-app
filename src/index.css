@@ -18,7 +18,9 @@ textarea {
   height: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background-color: #f7dccc;
+  background-color: #fcd378;
+  /* background-color: #f7dccc; */
+  /* background-color: floralwhite; */
   font-family: Aleo, Arial, Helvetica, sans-serif;
 }
 a {

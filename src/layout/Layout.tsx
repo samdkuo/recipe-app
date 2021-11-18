@@ -8,6 +8,8 @@ const Layout = ({ children, routes }: { children: any; routes: any }) => {
       style={{
         padding: 24,
         paddingTop: 8,
+        maxWidth: 1500,
+        margin: "auto",
       }}
     >
       <Navigation routes={routes} />

@@ -5,12 +5,17 @@ import { Typography } from "../components/index";
 
 const Home = () => {
   return (
-    <View>
+    <View style={{ flexDirection: "row" }}>
       <Image
-        source={{ uri: "../public/images/letsEatTransparent.png" }}
+        source={{ uri: "images/letsEatTransparent.png" }}
         resizeMode="cover"
-        style={{ width: 90, height: 90 }}
+        style={{ width: 400, height: 400 }}
       />
+      {/* <Image
+        source={{ uri: "images/letsEatTransparent.png" }}
+        resizeMode="cover"
+        style={{ width: 400, height: 400 }}
+      /> */}
     </View>
   );
 };
