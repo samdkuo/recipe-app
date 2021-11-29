@@ -112,7 +112,14 @@ function RecipeForm({}: RecipeFormProps) {
   };
 
   return (
-    <View>
+    <View
+      style={{
+        width: "50%",
+        marginVertical: 16,
+        padding: 8,
+        backgroundColor: "#FFFFFA",
+      }}
+    >
       <Formik
         initialValues={{
           name: "",
@@ -123,7 +130,13 @@ function RecipeForm({}: RecipeFormProps) {
         onSubmit={handleSubmit}
       >
         {({ values }) => (
-          <View style={styles.container}>
+          <View
+            style={{
+              borderWidth: 2,
+              borderColor: colors.secondary,
+              padding: 32,
+            }}
+          >
             <Text style={styles.title}>Add new Recipe</Text>
 
             <Input label="Dish Name" />
@@ -171,13 +184,13 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   title: {
-    color: colors.primary,
+    color: colors.gray700,
     fontSize: 24,
     textTransform: "capitalize",
     marginBottom: 8,
   },
   inputs: {
-    borderColor: colors.primary,
+    borderColor: colors.gray700,
     borderWidth: 1,
     borderRadius: 4,
     padding: 8,
@@ -189,8 +202,8 @@ const styles = StyleSheet.create({
     marginTop: 4,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: colors.primary,
-    backgroundColor: colors.primary,
+    borderColor: colors.gray700,
+    backgroundColor: colors.gray700,
     justifyContent: "center",
     alignItems: "center",
   },

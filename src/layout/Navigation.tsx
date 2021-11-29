@@ -38,12 +38,12 @@ const Navigation = ({ routes }: { routes: any }) => {
               <Link to={route.path} style={{ textDecoration: "none" }}>
                 <Typography
                   key={index}
-                  color="text"
                   font="800"
                   style={{
                     fontSize: 18,
                     textShadowColor: colors.secondary,
                     textShadowOffset: { width: 2, height: 2 },
+                    // textShadowRadius: 2,
                   }}
                 >
                   {route.path.substring(1, 2).toUpperCase()}
