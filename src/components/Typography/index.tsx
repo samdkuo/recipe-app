@@ -86,7 +86,12 @@ export const Typography = forwardRef(function Typography(
     <RNText
       ref={ref}
       style={[
-        { color: colorStyle, fontWeight: font, fontSize: textSize },
+        {
+          color: colorStyle,
+          fontWeight: font,
+          fontSize: textSize,
+          fontFamily: "Aleo",
+        },
         style,
       ]}
       {...rest}

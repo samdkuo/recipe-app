@@ -37,6 +37,8 @@ export type TextThemeColor =
   | "deepOrange"
   | "brown";
 
+/* background-color: #fcd378; */
+/* background-color: #f7dccc; */
 export const colors = {
   // Elemental
   primary: "#ff775c",
@@ -44,6 +46,7 @@ export const colors = {
   primaryMuted: "#fcd4a8",
   secondary: "#fc9f61",
   text: "#f6f3e4",
+  background: "#FFFFFA",
 
   // Grays
   white: "#FFFFFF",
