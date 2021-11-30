@@ -1,7 +1,8 @@
 import React, { useCallback } from "react";
-import { Text, TextInput, Pressable, View, StyleSheet } from "react-native";
+import { TextInput, Pressable, View, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import { colors } from "../../theme/colors";
+import { Typography } from "..";
 
 interface RecipeFormProps {}
 
@@ -14,7 +15,7 @@ const Input = ({
 }) => {
   return (
     <View style={{ marginBottom: 8 }}>
-      <Text style={styles.label}>{label}</Text>
+      <Typography style={styles.label}>{label}</Typography>
       <TextInput
         style={styles.input}
         multiline={multi}
@@ -27,7 +28,7 @@ const Input = ({
 const IngredientInput = (handleSubmit: any) => {
   return (
     <View style={{ marginBottom: 8 }}>
-      <Text style={styles.label}>Add Ingredients</Text>
+      <Typography style={styles.label}>Add Ingredients</Typography>
 
       <Formik
         initialValues={{ name: "", quantity: "" }}
@@ -67,7 +68,7 @@ const IngredientInput = (handleSubmit: any) => {
               ]}
               onPress={() => handleSubmit(values)}
             >
-              <Text style={{ color: "white" }}>Add</Text>
+              <Typography style={{ color: "white" }}>Add</Typography>
             </Pressable>
           </View>
         )}
@@ -120,7 +121,7 @@ function RecipeForm({}: RecipeFormProps) {
       >
         {({ values }) => (
           <View>
-            <Text style={styles.title}>Add new Recipe</Text>
+            <Typography style={styles.title}>Add new Recipe</Typography>
 
             <Input label="Dish Name" />
             <Input label="description" multi />
@@ -128,9 +129,9 @@ function RecipeForm({}: RecipeFormProps) {
 
             <View>
               {ingredientsList.map((ingredient, index) => (
-                <Text
+                <Typography
                   key={index}
-                >{`${ingredient.name} ${ingredient.quantity}`}</Text>
+                >{`${ingredient.name} ${ingredient.quantity}`}</Typography>
               ))}
             </View>
             <Input label="directions" multi />
@@ -139,7 +140,7 @@ function RecipeForm({}: RecipeFormProps) {
               style={styles.button}
               onPress={() => handleSubmit(values)}
             >
-              <Text style={{ color: "white" }}>Submit</Text>
+              <Typography style={{ color: "white" }}>Submit</Typography>
             </Pressable>
           </View>
         )}
@@ -147,7 +148,9 @@ function RecipeForm({}: RecipeFormProps) {
 
       <View>
         {recipeList.map((recipe, index) => (
-          <Text key={index}>{`${recipe.name} ${recipe.description}`}</Text>
+          <Typography
+            key={index}
+          >{`${recipe.name} ${recipe.description}`}</Typography>
         ))}
       </View>
     </View>
