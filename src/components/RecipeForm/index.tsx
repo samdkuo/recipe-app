@@ -13,12 +13,10 @@ const Input = ({
   multi?: boolean;
 }) => {
   return (
-    <View style={{ marginTop: 8 }}>
-      <Text style={{ textTransform: "capitalize", color: colors.primary }}>
-        {label}
-      </Text>
+    <View style={{ marginBottom: 8 }}>
+      <Text style={styles.label}>{label}</Text>
       <TextInput
-        style={styles.inputs}
+        style={styles.input}
         multiline={multi}
         numberOfLines={multi ? 4 : 1}
       />
@@ -28,10 +26,8 @@ const Input = ({
 
 const IngredientInput = (handleSubmit: any) => {
   return (
-    <View style={{ marginTop: 8 }}>
-      <Text style={{ textTransform: "capitalize", color: colors.primary }}>
-        Add Ingredients
-      </Text>
+    <View style={{ marginBottom: 8 }}>
+      <Text style={styles.label}>Add Ingredients</Text>
 
       <Formik
         initialValues={{ name: "", quantity: "" }}
@@ -46,7 +42,7 @@ const IngredientInput = (handleSubmit: any) => {
             }}
           >
             <TextInput
-              style={[styles.inputs, { flex: 0.9 }]}
+              style={[styles.input, { flex: 0.9 }]}
               placeholder="name"
               onChangeText={handleChange("name")}
               onBlur={handleBlur("name")}
@@ -54,7 +50,7 @@ const IngredientInput = (handleSubmit: any) => {
             />
 
             <TextInput
-              style={[styles.inputs, { width: 80 }]}
+              style={[styles.input, { width: 80 }]}
               placeholder="quantity"
               onChangeText={handleChange("quantity")}
               onBlur={handleBlur("quantity")}
@@ -63,7 +59,7 @@ const IngredientInput = (handleSubmit: any) => {
 
             <Pressable
               style={[
-                styles.submit,
+                styles.button,
                 {
                   marginTop: 0,
                   paddingHorizontal: 16,
@@ -112,14 +108,7 @@ function RecipeForm({}: RecipeFormProps) {
   };
 
   return (
-    <View
-      style={{
-        width: "50%",
-        marginVertical: 16,
-        padding: 8,
-        backgroundColor: "#FFFFFA",
-      }}
-    >
+    <View style={styles.container}>
       <Formik
         initialValues={{
           name: "",
@@ -130,13 +119,7 @@ function RecipeForm({}: RecipeFormProps) {
         onSubmit={handleSubmit}
       >
         {({ values }) => (
-          <View
-            style={{
-              borderWidth: 2,
-              borderColor: colors.secondary,
-              padding: 32,
-            }}
-          >
+          <View>
             <Text style={styles.title}>Add new Recipe</Text>
 
             <Input label="Dish Name" />
@@ -153,7 +136,7 @@ function RecipeForm({}: RecipeFormProps) {
             <Input label="directions" multi />
 
             <Pressable
-              style={styles.submit}
+              style={styles.button}
               onPress={() => handleSubmit(values)}
             >
               <Text style={{ color: "white" }}>Submit</Text>
@@ -176,34 +159,38 @@ export default RecipeForm;
 const styles = StyleSheet.create({
   container: {
     width: "50%",
+    maxWidth: 400,
     marginVertical: 16,
-    padding: 12,
-    borderColor: colors.gray200,
-    borderWidth: 1,
     borderRadius: 8,
-    backgroundColor: colors.white,
+    shadowColor: colors.gray400,
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    padding: 32,
   },
   title: {
-    color: colors.gray700,
+    color: colors.primary,
     fontSize: 24,
     textTransform: "capitalize",
-    marginBottom: 8,
+    marginBottom: 16,
   },
-  inputs: {
-    borderColor: colors.gray700,
+  label: {
+    textTransform: "capitalize",
+    color: colors.gray700,
+  },
+  input: {
+    borderColor: colors.gray400,
     borderWidth: 1,
     borderRadius: 4,
     padding: 8,
     outlineColor: colors.cyan,
     outlineWidth: 1,
   },
-  submit: {
+  button: {
     padding: 8,
     marginTop: 4,
     borderRadius: 4,
-    borderWidth: 1,
-    borderColor: colors.gray700,
-    backgroundColor: colors.gray700,
+    backgroundColor: colors.primary,
     justifyContent: "center",
     alignItems: "center",
   },
