@@ -1,12 +1,9 @@
 import React, { Ref, forwardRef, useMemo } from "react";
 import {
-  StyleSheet,
   StyleProp,
   TextStyle,
   Text as RNText,
   TextProps as RNTextProps,
-  ViewStyle,
-  Platform,
 } from "react-native";
 
 import { colors, TextThemeColor } from "../../theme/colors";
@@ -62,7 +59,7 @@ export const Typography = forwardRef(function Typography(
   const textSize = useMemo(() => {
     switch (type) {
       case "body":
-        return 12;
+        return 14;
       case "bodyLarge":
         return 18;
       case "title":

@@ -1,33 +1,14 @@
 import React, { useCallback } from "react";
-import { TextInput, Pressable, View, StyleSheet } from "react-native";
+import { Pressable, View, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import { colors } from "../../theme/colors";
-import { Typography } from "..";
+import { Typography, TextInput } from "..";
 
 interface RecipeFormProps {}
 
-const Input = ({
-  label,
-  multi = false,
-}: {
-  label: string;
-  multi?: boolean;
-}) => {
-  return (
-    <View style={{ marginBottom: 8 }}>
-      <Typography style={styles.label}>{label}</Typography>
-      <TextInput
-        style={styles.input}
-        multiline={multi}
-        numberOfLines={multi ? 4 : 1}
-      />
-    </View>
-  );
-};
-
 const IngredientInput = (handleSubmit: any) => {
   return (
-    <View style={{ marginBottom: 8 }}>
+    <View>
       <Typography style={styles.label}>Add Ingredients</Typography>
 
       <Formik
@@ -39,23 +20,19 @@ const IngredientInput = (handleSubmit: any) => {
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
-              alignItems: "center",
             }}
           >
             <TextInput
-              style={[styles.input, { flex: 0.9 }]}
-              placeholder="name"
-              onChangeText={handleChange("name")}
-              onBlur={handleBlur("name")}
-              value={values.name}
+              textInputProps={{
+                placeholder: "name",
+              }}
             />
 
             <TextInput
-              style={[styles.input, { width: 80 }]}
-              placeholder="quantity"
-              onChangeText={handleChange("quantity")}
-              onBlur={handleBlur("quantity")}
-              value={values.quantity}
+              style={{ width: 80 }}
+              textInputProps={{
+                placeholder: "quantity",
+              }}
             />
 
             <Pressable
@@ -123,8 +100,8 @@ function RecipeForm({}: RecipeFormProps) {
           <View>
             <Typography style={styles.title}>Add new Recipe</Typography>
 
-            <Input label="Dish Name" />
-            <Input label="description" multi />
+            <TextInput label="Dish Name" />
+            <TextInput label="description" multi />
             <IngredientInput handleSubmit={handleIngredientSubmit} />
 
             <View>
@@ -134,7 +111,7 @@ function RecipeForm({}: RecipeFormProps) {
                 >{`${ingredient.name} ${ingredient.quantity}`}</Typography>
               ))}
             </View>
-            <Input label="directions" multi />
+            <TextInput label="directions" multi />
 
             <Pressable
               style={styles.button}
@@ -181,15 +158,8 @@ const styles = StyleSheet.create({
     textTransform: "capitalize",
     color: colors.gray700,
   },
-  input: {
-    borderColor: colors.gray400,
-    borderWidth: 1,
-    borderRadius: 4,
-    padding: 8,
-    outlineColor: colors.cyan,
-    outlineWidth: 1,
-  },
   button: {
+    height: 40,
     padding: 8,
     marginTop: 4,
     borderRadius: 4,
