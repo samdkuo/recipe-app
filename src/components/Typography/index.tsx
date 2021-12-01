@@ -46,7 +46,7 @@ export interface TypographyProps
  * example: https://smartrent-ui.com/components/general/typography
  */
 export const Typography = forwardRef(function Typography(
-  { color = "text", font, type = "body", style, ...rest }: TypographyProps,
+  { color = "gray700", font, type = "body", style, ...rest }: TypographyProps,
   ref: Ref<RNText>
 ) {
   const colorStyle = useMemo(() => {
@@ -73,7 +73,7 @@ export const Typography = forwardRef(function Typography(
       case "title5":
         return 14;
       case "title6":
-        return 10;
+        return 12;
       default:
         return undefined;
     }

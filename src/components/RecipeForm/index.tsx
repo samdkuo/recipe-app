@@ -156,7 +156,6 @@ const styles = StyleSheet.create({
   },
   label: {
     textTransform: "capitalize",
-    color: colors.gray700,
   },
   button: {
     height: 40,
