@@ -17,7 +17,7 @@ interface props extends Omit<RNTextInputProps, "style"> {
   style?: StyleProp<ViewStyle>;
 }
 
-const TextInput = ({
+export const TextInput = ({
   label,
   multi = false,
   textInputProps = {},
@@ -35,8 +35,6 @@ const TextInput = ({
     </View>
   );
 };
-
-export default TextInput;
 
 const styles = StyleSheet.create({
   label: {

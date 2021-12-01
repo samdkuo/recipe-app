@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, Pressable } from "react-native";
+import { View, Image, Pressable } from "react-native";
 import { Typography } from "..";
 import { colors } from "../../theme/colors";
 
@@ -31,9 +31,7 @@ function RecipeCard({ title, totalIngredients, cookTime }: RecipeCardProps) {
           }}
         />
         <View style={{ padding: 16 }}>
-          <Typography color="primary" type="title4" font="600">
-            {title}
-          </Typography>
+          <Typography font="500">{title}</Typography>
           <View>
             <Typography>{`${totalIngredients} ingredients | ${cookTime} min`}</Typography>
           </View>
