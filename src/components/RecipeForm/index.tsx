@@ -35,19 +35,7 @@ const IngredientInput = (handleSubmit: any) => {
               }}
             />
 
-            {/* <Pressable
-              style={[
-                styles.button,
-                {
-                  marginTop: 0,
-                  paddingHorizontal: 16,
-                },
-              ]}
-              onPress={() => handleSubmit(values)}
-            >
-              <Typography style={{ color: "white" }}>Add</Typography>
-            </Pressable> */}
-            <Button>Add</Button>
+            <Button onPress={() => handleSubmit(values)}>Add</Button>
           </View>
         )}
       </Formik>
@@ -114,12 +102,7 @@ function RecipeForm({}: RecipeFormProps) {
             </View>
             <TextInput label="directions" multi />
 
-            <Pressable
-              style={styles.button}
-              onPress={() => handleSubmit(values)}
-            >
-              <Typography style={{ color: "white" }}>Submit</Typography>
-            </Pressable>
+            <Button onPress={() => handleSubmit(values)}>Submit</Button>
           </View>
         )}
       </Formik>
@@ -157,14 +140,5 @@ const styles = StyleSheet.create({
   },
   label: {
     textTransform: "capitalize",
-  },
-  button: {
-    height: 40,
-    padding: 8,
-    marginTop: 4,
-    borderRadius: 4,
-    backgroundColor: colors.primary,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });

@@ -279,5 +279,6 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
+    textTransform: "capitalize",
   },
 });
