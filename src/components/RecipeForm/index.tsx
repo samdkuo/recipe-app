@@ -35,7 +35,7 @@ const IngredientInput = (handleSubmit: any) => {
               }}
             />
 
-            <Pressable
+            {/* <Pressable
               style={[
                 styles.button,
                 {
@@ -46,7 +46,8 @@ const IngredientInput = (handleSubmit: any) => {
               onPress={() => handleSubmit(values)}
             >
               <Typography style={{ color: "white" }}>Add</Typography>
-            </Pressable>
+            </Pressable> */}
+            <Button>Add</Button>
           </View>
         )}
       </Formik>

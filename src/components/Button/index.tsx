@@ -1,7 +1,6 @@
 import React, { Ref, useMemo, forwardRef, ReactNode } from "react";
 import {
   Pressable,
-  PressableProps,
   TouchableWithoutFeedbackProps,
   StyleSheet,
   View,
@@ -152,7 +151,7 @@ export const Button = forwardRef(function Button(
     switch (normalizedSize) {
       case "large": {
         return {
-          fontSize: 16,
+          fontSize: 18,
           lineHeight: 20,
         };
       }
@@ -266,6 +265,7 @@ Button.displayName = "Button";
 
 const styles = StyleSheet.create({
   root: {
+    height: 40,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
@@ -279,6 +279,5 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    textTransform: "uppercase",
   },
 });

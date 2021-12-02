@@ -14,7 +14,7 @@ function RecipeCard({ title, totalIngredients, cookTime }: RecipeCardProps) {
     <Pressable>
       <View
         style={{
-          borderRadius: 8,
+          borderRadius: 4,
           shadowColor: colors.gray400,
           shadowOffset: { width: 0, height: 1 },
           shadowOpacity: 0.3,
