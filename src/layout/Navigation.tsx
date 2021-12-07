@@ -38,7 +38,7 @@ const Navigation = ({ routes }: { routes: any }) => {
             const nav =
               route.path.substring(1, 2).toUpperCase() +
               route.path.substring(2).toLowerCase();
-            return <Link key={index} link={nav} />;
+            return <Link key={index} link={nav} style={{ marginLeft: 16 }} />;
           }
         })}
       </View>

@@ -27,7 +27,6 @@ export const Link = forwardRef(function Link({
               ? colors.primaryMuted
               : colors.gray700,
             fontSize: 16,
-            marginLeft: 16,
           },
           style,
         ]}
