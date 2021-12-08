@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Pressable, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import { colors } from "../../theme/colors";
 import { Typography, TextInput, Button } from "../index";
@@ -55,7 +55,7 @@ interface Recipe {
   directions: string;
 }
 
-function RecipeForm({}: RecipeFormProps) {
+export function RecipeForm({}: RecipeFormProps) {
   const [recipeList, setRecipeList] = React.useState<Array<Recipe>>([]);
 
   const [ingredientsList, setIngredientsList] = React.useState<
@@ -117,8 +117,6 @@ function RecipeForm({}: RecipeFormProps) {
     </View>
   );
 }
-
-export default RecipeForm;
 
 const styles = StyleSheet.create({
   container: {

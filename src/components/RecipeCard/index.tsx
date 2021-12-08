@@ -9,7 +9,11 @@ interface RecipeCardProps {
   cookTime: number | undefined;
 }
 
-function RecipeCard({ title, totalIngredients, cookTime }: RecipeCardProps) {
+export function RecipeCard({
+  title,
+  totalIngredients,
+  cookTime,
+}: RecipeCardProps) {
   return (
     <TouchableOpacity
       style={{
@@ -38,5 +42,3 @@ function RecipeCard({ title, totalIngredients, cookTime }: RecipeCardProps) {
     </TouchableOpacity>
   );
 }
-
-export default RecipeCard;

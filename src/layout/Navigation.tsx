@@ -2,8 +2,7 @@ import React from "react";
 import { View, Image } from "react-native";
 import { Link as ReactLink } from "react-router-dom";
 
-import { Typography, Link } from "../components";
-import { colors } from "../theme/colors";
+import { Link } from "../components";
 import { dimensions } from "./types";
 
 const Navigation = ({ routes }: { routes: any }) => {
