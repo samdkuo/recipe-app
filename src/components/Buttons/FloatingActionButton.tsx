@@ -23,7 +23,6 @@ export interface FloatingActionButtonProps {
   style?: StyleProp<ViewStyle>; // Allow overriding the <Pressable /> styles
   textStyle?: StyleProp<TextStyle>; // Allow overriding the <Text /> styles
   variation?: ButtonVariation;
-  children: ReactNode;
 
   /**
    * @platform web
@@ -235,7 +234,7 @@ export const FloatingActionButton = forwardRef(function FloatingActionButton(
   );
 });
 
-FloatingActionButton.displayName = "FloatingActionFloatingActionButton";
+FloatingActionButton.displayName = "FloatingActionButton";
 
 const styles = StyleSheet.create({
   root: {

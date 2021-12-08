@@ -1,15 +1,9 @@
 import React from "react";
 import { View } from "react-native";
-import RecipeCard from "../components/RecipeCard";
-import RecipeForm from "../components/RecipeForm";
+import { RecipeCard, RecipeForm } from "../components";
 
 const Home = () => {
-  return (
-    <View>
-      <RecipeCard title={"Hamburger"} totalIngredients={10} cookTime={40} />
-      <RecipeForm />
-    </View>
-  );
+  return <View>calendar goes here</View>;
 };
 
 export default Home;
