@@ -6,6 +6,7 @@ import {
   FloatingActionButton,
   Grid,
 } from "../components";
+import { useWindowDimensionsQuery } from "../hooks";
 
 const recipes = [
   {
@@ -38,10 +39,16 @@ const recipes = [
   },
 ];
 const Home = () => {
+  const { small, medium } = useWindowDimensionsQuery();
+
   return (
     <View>
       <FloatingActionButton />
-      <Grid numColumns={4} gap={8}>
+      <Grid
+        numColumns={small ? 1 : medium ? 2 : 4}
+        gap={16}
+        style={{ justifyContent: "center" }}
+      >
         {recipes.map(({ name, totalIngredients, cooktime, image }, index) => (
           <RecipeCard
             key={index}
