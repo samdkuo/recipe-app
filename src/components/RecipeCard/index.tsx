@@ -5,14 +5,16 @@ import { colors } from "../../theme/colors";
 
 interface RecipeCardProps {
   title: string;
-  totalIngredients: number;
-  cookTime: number | undefined;
+  totalIngredients?: number;
+  cookTime?: number | undefined;
+  image?: string;
 }
 
 export function RecipeCard({
   title,
   totalIngredients,
   cookTime,
+  image = "https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80",
 }: RecipeCardProps) {
   return (
     <TouchableOpacity
@@ -30,7 +32,7 @@ export function RecipeCard({
       <Image
         style={{ width: "100%", height: 200 }}
         source={{
-          uri: "https://images.unsplash.com/photo-1481070555726-e2fe8357725c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
+          uri: image,
         }}
       />
       <View style={{ padding: 16 }}>

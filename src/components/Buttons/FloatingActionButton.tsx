@@ -71,17 +71,6 @@ export const FloatingActionButton = forwardRef(function FloatingActionButton(
         });
   }, [size]);
 
-  // const linkProps = Platform.select<PressableProps>({
-  //   web: {
-  //     href,
-  //     hrefAttrs: {
-  //       rel,
-  //       target,
-  //       download,
-  //     },
-  //   },
-  // });
-
   const sizeStyles = useMemo(() => {
     switch (normalizedSize) {
       case "large": {
