@@ -1,6 +1,11 @@
 import React from "react";
 import { View } from "react-native";
-import { RecipeCard, RecipeForm, FloatingActionButton } from "../components";
+import {
+  RecipeCard,
+  RecipeForm,
+  FloatingActionButton,
+  Grid,
+} from "../components";
 
 const recipes = [
   {
@@ -36,13 +41,7 @@ const Home = () => {
   return (
     <View>
       <FloatingActionButton />
-      <View
-        style={{
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-        }}
-      >
+      <Grid numColumns={4} gap={8}>
         {recipes.map(({ name, totalIngredients, cooktime, image }, index) => (
           <RecipeCard
             key={index}
@@ -52,7 +51,7 @@ const Home = () => {
             image={image}
           />
         ))}
-      </View>
+      </Grid>
       {/* <RecipeForm /> */}
     </View>
   );
