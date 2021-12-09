@@ -23,9 +23,3 @@ textarea {
 a {
   text-decoration: none;
 }
-
-@font-face {
-  font-family: "Aleo";
-  src: local("Aleo"), url("./fonts/aleo/Aleo-Regular.ttf") format("truetype");
-  font-weight: regular;
-}
