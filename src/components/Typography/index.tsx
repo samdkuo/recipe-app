@@ -8,6 +8,8 @@ import {
 
 import { colors, TextThemeColor } from "../../theme/colors";
 
+export type FontFamily = "Aleo" | "Open Sans";
+
 export type TextType =
   | "body"
   | "bodyLarge"
@@ -38,6 +40,7 @@ export interface TypographyProps
   children?: React.ReactNode;
   color?: TextThemeColor;
   font?: ThemeFont;
+  fontFamily?: FontFamily;
 }
 
 /**
@@ -46,7 +49,14 @@ export interface TypographyProps
  * example: https://smartrent-ui.com/components/general/typography
  */
 export const Typography = forwardRef(function Typography(
-  { color = "gray700", font, type = "body", style, ...rest }: TypographyProps,
+  {
+    color = "gray700",
+    font,
+    fontFamily = "Open Sans",
+    type = "body",
+    style,
+    ...rest
+  }: TypographyProps,
   ref: Ref<RNText>
 ) {
   const colorStyle = useMemo(() => {
@@ -87,7 +97,7 @@ export const Typography = forwardRef(function Typography(
           color: colorStyle,
           fontWeight: font,
           fontSize: textSize,
-          fontFamily: "Aleo",
+          fontFamily: fontFamily,
         },
         style,
       ]}

@@ -17,7 +17,7 @@ export const Link = forwardRef(function Link({
   style?: StyleProp<TextStyle>;
 }) {
   return (
-    <RLink to={link} style={{ textDecoration: "none" }}>
+    <RLink to={link} style={{ textDecoration: "none", fontFamily: "Aleo" }}>
       <Pressable
         style={({ pressed, hovered }: PressableState) => [
           {

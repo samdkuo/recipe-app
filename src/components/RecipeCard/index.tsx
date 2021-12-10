@@ -37,7 +37,9 @@ export function RecipeCard({
         }}
       />
       <View style={{ padding: 16 }}>
-        <Typography font="500">{title}</Typography>
+        <Typography font="500" fontFamily="Aleo">
+          {title}
+        </Typography>
         <View>
           <Typography>{`${totalIngredients} ingredients | ${cookTime} min`}</Typography>
         </View>
