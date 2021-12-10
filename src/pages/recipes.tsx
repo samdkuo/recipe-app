@@ -5,6 +5,7 @@ import {
   RecipeForm,
   FloatingActionButton,
   Grid,
+  Button,
 } from "../components";
 import { useWindowDimensionsQuery } from "../hooks";
 
@@ -43,9 +44,9 @@ const Home = () => {
 
   return (
     <View>
-      <FloatingActionButton />
+      <Button style={{ width: 140, marginBottom: 16 }}>Add Recipe +</Button>
       <Grid
-        numColumns={small ? 1 : medium ? 2 : 4}
+        numColumns={small ? 1 : medium ? 3 : 5}
         gap={16}
         style={{ justifyContent: "center" }}
       >

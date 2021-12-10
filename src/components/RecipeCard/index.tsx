@@ -19,14 +19,15 @@ export function RecipeCard({
   return (
     <TouchableOpacity
       style={{
+        backgroundColor: colors.gray050,
         borderRadius: 4,
         shadowColor: colors.gray400,
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.3,
         shadowRadius: 8,
         overflow: "hidden",
-        width: 250,
-        backgroundColor: colors.gray050,
+        flex: 1,
+        // width: 250,
       }}
     >
       <Image
