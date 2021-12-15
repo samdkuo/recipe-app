@@ -6,6 +6,7 @@ import {
   FloatingActionButton,
   Grid,
   Button,
+  Modal,
 } from "../components";
 import { useWindowDimensionsQuery, useModalState } from "../hooks";
 
@@ -48,6 +49,9 @@ const Home = () => {
       <Button style={{ width: 140, marginBottom: 16 }} onPress={onOpen}>
         Add Recipe +
       </Button>
+      <Modal visible={visible} onBackdropPress={onClose}>
+        <RecipeForm />
+      </Modal>
       <Grid
         numColumns={small ? 1 : medium ? 3 : 5}
         gap={16}
@@ -63,8 +67,6 @@ const Home = () => {
           />
         ))}
       </Grid>
-
-      <RecipeForm />
     </View>
   );
 };
