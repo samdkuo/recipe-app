@@ -7,7 +7,7 @@ import {
   Grid,
   Button,
 } from "../components";
-import { useWindowDimensionsQuery } from "../hooks";
+import { useWindowDimensionsQuery, useModalState } from "../hooks";
 
 const recipes = [
   {
@@ -41,10 +41,13 @@ const recipes = [
 ];
 const Home = () => {
   const { small, medium } = useWindowDimensionsQuery();
+  const { visible, onClose, onOpen } = useModalState();
 
   return (
     <View>
-      <Button style={{ width: 140, marginBottom: 16 }}>Add Recipe +</Button>
+      <Button style={{ width: 140, marginBottom: 16 }} onPress={onOpen}>
+        Add Recipe +
+      </Button>
       <Grid
         numColumns={small ? 1 : medium ? 3 : 5}
         gap={16}
@@ -60,7 +63,8 @@ const Home = () => {
           />
         ))}
       </Grid>
-      {/* <RecipeForm /> */}
+
+      <RecipeForm />
     </View>
   );
 };
