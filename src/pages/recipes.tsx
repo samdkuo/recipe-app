@@ -1,13 +1,7 @@
 import React from "react";
 import { View } from "react-native";
-import {
-  RecipeCard,
-  RecipeForm,
-  FloatingActionButton,
-  Grid,
-  Button,
-  Modal,
-} from "../components";
+import { RecipeCard, RecipeForm, Grid } from "../components";
+import { Button, Modal } from "semantic-ui-react";
 import { useWindowDimensionsQuery, useModalState } from "../hooks";
 
 const recipes = [
@@ -46,9 +40,19 @@ const Home = () => {
 
   return (
     <View>
-      <Button style={{ width: 140, marginBottom: 16 }} onPress={onOpen}>
-        Add Recipe +
-      </Button>
+      <Modal
+        trigger={
+          <Button style={{ width: 140, marginBottom: 16 }} onPress={onOpen}>
+            Add Recipe +
+          </Button>
+        }
+        onClose={onClose}
+        onOpen={onOpen}
+        open={visible}
+      >
+        <RecipeForm />
+      </Modal>
+
       <Grid
         numColumns={small ? 1 : medium ? 3 : 5}
         gap={16}
@@ -64,9 +68,6 @@ const Home = () => {
           />
         ))}
       </Grid>
-      <Modal visible={visible} onBackdropPress={onClose}>
-        <RecipeForm />
-      </Modal>
     </View>
   );
 };
