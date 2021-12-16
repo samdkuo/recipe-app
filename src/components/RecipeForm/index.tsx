@@ -120,15 +120,8 @@ export function RecipeForm({}: RecipeFormProps) {
 
 const styles = StyleSheet.create({
   container: {
-    width: "50%",
-    maxWidth: 400,
-    marginVertical: 16,
-    borderRadius: 8,
-    shadowColor: colors.gray400,
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    padding: 32,
+    width: "100%",
+    padding: 40,
   },
   title: {
     color: colors.primary,

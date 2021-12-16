@@ -49,6 +49,8 @@ const Home = () => {
         onClose={onClose}
         onOpen={onOpen}
         open={visible}
+        size="tiny"
+        closeIcon
       >
         <RecipeForm />
       </Modal>
