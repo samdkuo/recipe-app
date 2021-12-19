@@ -39,7 +39,7 @@ module.exports = {
 
   overrides: [
     {
-      files: ["**/*.js?(x)"],
+      files: ["**/*.js?(x)", "**/*.ts?(x)"],
       rules: {
         "@typescript-eslint/no-var-requires": 1,
         "react-native/no-inline-styles": 0,
