@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Image, TouchableOpacity } from "react-native";
+import { Modal } from "semantic-ui-react";
 import { Typography } from "..";
 import { colors } from "../../theme/colors";
 
@@ -17,6 +18,7 @@ export function RecipeCard({
   image = "https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80",
 }: RecipeCardProps) {
   return (
+    <Modal trigger={
     <TouchableOpacity
       style={{
         backgroundColor: colors.gray050,
@@ -45,5 +47,9 @@ export function RecipeCard({
         </View>
       </View>
     </TouchableOpacity>
+    }>
+    test
+    </Modal>
+
   );
 }

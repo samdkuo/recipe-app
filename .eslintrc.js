@@ -1,5 +1,5 @@
 module.exports = {
-  extends: "@react-native-community",
+  extends: ["@react-native-community", "plugin:prettier/recommended"],
 
   rules: {
     // TODO: fix these and delete them
@@ -35,6 +35,7 @@ module.exports = {
       },
     ],
     "react-native/no-inline-styles": 0,
+    "prettier/prettier": 0
   },
 
   overrides: [

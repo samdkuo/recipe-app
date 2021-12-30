@@ -12,6 +12,17 @@ export const getRecipeURL = (entry_id = null) => {
     return `${recipe}/recipeID/${entry_id}`;
   }
 };
+export const getIngredientsURL = (entry_id = null) => {
+  const api = serverURL;
+  const ingredient = `${api}/ingredient`;
+  const recipeing = `${ingredient}/list-ingredients`;
+
+  if (entry_id === null) {
+    return recipeing;
+  } else {
+    return `${recipeing}/recipeID/${entry_id}`;
+  }
+};
 
 export const fetchRecipeEntries = () => {
   return axios
@@ -25,9 +36,9 @@ export const fetchRecipeEntries = () => {
     });
 };
 
-export const fetchRecipeIngredients = (recipeId: number) => {
+export const fetchRecipeIngredients = () => {
   return axios
-    .get(getRecipeURL(), { headers: { "Jwt-Token": "" } })
+    .get(getIngredientsURL(), { headers: { "Jwt-Token": "" } })
     .then((response) => {
       console.log("successful get");
       return response.data;
