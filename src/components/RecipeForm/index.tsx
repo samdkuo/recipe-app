@@ -29,7 +29,6 @@ const IngredientInput = (handleSubmit: any) => {
             />
 
             <TextInput
-              style={{ width: 80 }}
               textInputProps={{
                 placeholder: "quantity",
               }}
@@ -90,7 +89,7 @@ export function RecipeForm({}: RecipeFormProps) {
             <Typography style={styles.title}>Add new Recipe</Typography>
 
             <TextInput label="Dish Name" />
-            <TextInput label="description" multi />
+            <TextInput label="description" multi style={{ height: 60 }} />
             <IngredientInput handleSubmit={handleIngredientSubmit} />
 
             <View>
@@ -100,7 +99,7 @@ export function RecipeForm({}: RecipeFormProps) {
                 >{`${ingredient.name} ${ingredient.quantity}`}</Typography>
               ))}
             </View>
-            <TextInput label="directions" multi />
+            <TextInput label="directions" multi style={{ height: 200 }} />
 
             <Button onPress={() => handleSubmit(values)}>Submit</Button>
           </View>
