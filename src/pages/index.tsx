@@ -1,14 +1,14 @@
 import React from "react";
 import { Image, View } from "react-native";
 import Layout from "../layout/Layout";
-import { Pill, Typography } from "../components/index";
+import { Pill, Typography, Grid } from "../components/index";
 import { Search } from "semantic-ui-react";
 
 const Home = () => {
   return (
     <View>
       <Search />
-      <View style={{ flexDirection: "row" }}>
+      <Grid numColumns={6} gap={16}>
         {[
           "Breakfast",
           "Entrees",
@@ -19,7 +19,7 @@ const Home = () => {
         ].map((category, index) => (
           <Pill>{category}</Pill>
         ))}
-      </View>
+      </Grid>
     </View>
   );
 };
