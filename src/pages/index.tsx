@@ -2,20 +2,12 @@ import React from "react";
 import { Image, View } from "react-native";
 import Layout from "../layout/Layout";
 import { Typography } from "../components/index";
+import { Search } from "semantic-ui-react";
 
 const Home = () => {
   return (
-    <View style={{ flexDirection: "row" }}>
-      <Image
-        source={{ uri: "images/letsEatTransparent.png" }}
-        resizeMode="cover"
-        style={{ width: 400, height: 400 }}
-      />
-      {/* <Image
-        source={{ uri: "images/letsEatTransparent.png" }}
-        resizeMode="cover"
-        style={{ width: 400, height: 400 }}
-      /> */}
+    <View>
+      <Search />
     </View>
   );
 };
