@@ -12,8 +12,9 @@ const Home = () => {
       }}
     >
       <Image
-        source={{ uri: "images/letsEatTransparent.png" }}
-        style={{ width: 400, height: 400, margin: "auto", marginVertical: 0 }}
+        source={{ uri: "images/logo-long.png" }}
+        resizeMode="cover"
+        style={{ width: 600, height: 300, margin: "auto", marginVertical: 0 }}
       />
       <View>
         <TextInput placeholder="Search..." style={{ width: "100%" }} />

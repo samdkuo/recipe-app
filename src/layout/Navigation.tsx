@@ -20,9 +20,9 @@ const Navigation = ({ routes }: { routes: any }) => {
     >
       <ReactLink to="/">
         <Image
-          source={{ uri: "images/letsEatTransparent.png" }}
+          source={{ uri: "images/fried-egg.png" }}
           resizeMode="cover"
-          style={{ width: 70, height: 70 }}
+          style={{ width: 40, height: 40 }}
         />
       </ReactLink>
       <View
