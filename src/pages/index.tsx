@@ -4,25 +4,32 @@ import { Pill, Typography, Grid, TextInput } from "../components/index";
 
 const Home = () => {
   return (
-    <View>
+    <View
+      style={{
+        height: "100%",
+        width: "100%",
+        alignContent: "center",
+      }}
+    >
       <Image
         source={{ uri: "images/letsEatTransparent.png" }}
-        resizeMode="cover"
-        style={{ width: 400, height: 400 }}
+        style={{ width: 400, height: 400, margin: "auto", marginVertical: 0 }}
       />
-      <TextInput placeholder="Search..." />
-      <Grid numColumns={6} gap={16}>
-        {[
-          "Breakfast",
-          "Entrees",
-          "Bread",
-          "Side Dishes",
-          "Dessert",
-          "Drinks",
-        ].map((category, index) => (
-          <Pill>{category}</Pill>
-        ))}
-      </Grid>
+      <View>
+        <TextInput placeholder="Search..." style={{ width: "100%" }} />
+        <Grid numColumns={6} gap={16}>
+          {[
+            "Breakfast",
+            "Entrees",
+            "Bread",
+            "Side Dishes",
+            "Dessert",
+            "Drinks",
+          ].map((category, index) => (
+            <Pill>{category}</Pill>
+          ))}
+        </Grid>
+      </View>
     </View>
   );
 };

@@ -1,4 +1,4 @@
 export const dimensions = {
-  headerHeight: 80,
+  headerHeight: 100,
   mainPadding: 16,
 };

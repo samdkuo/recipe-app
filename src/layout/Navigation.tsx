@@ -13,15 +13,16 @@ const Navigation = ({ routes }: { routes: any }) => {
         justifyContent: "space-between",
         alignItems: "center",
         height: dimensions.headerHeight,
-        marginTop: 8,
-        marginBottom: 16,
+        paddingTop: 8,
+        paddingBottom: 16,
+        paddingHorizontal: 16,
       }}
     >
       <ReactLink to="/">
         <Image
           source={{ uri: "images/letsEatTransparent.png" }}
           resizeMode="cover"
-          style={{ width: 90, height: 90 }}
+          style={{ width: 70, height: 70 }}
         />
       </ReactLink>
       <View
