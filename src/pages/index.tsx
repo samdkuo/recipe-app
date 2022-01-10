@@ -8,12 +8,12 @@ const Home = () => {
   return (
     <View>
       <Search />
-      <View>
+      <View style={{ flexDirection: "row" }}>
         {[
           "Breakfast",
           "Entrees",
           "Bread",
-          "Side dishes",
+          "Side Dishes",
           "Dessert",
           "Drinks",
         ].map((category, index) => (
