@@ -30,14 +30,14 @@ export function RecipeCard({
   const [recipes] = React.useState([]);
 
   React.useEffect(() => {
-    fetchRecipeIngredients(id).then((response) => {
+    fetchRecipeIngredients(id).then((response: any) => {
       console.log(response);
       setIngredients(response);
     });
   }, [id]);
 
   return (
-    <Modal 
+    <Modal
       onClose={onClose}
       onOpen={onOpen}
       open={visible}
@@ -72,33 +72,37 @@ export function RecipeCard({
             </View>
           </View>
         </TouchableOpacity>
-    }>
-      <Modal.Header><Typography type="title2">{title}</Typography></Modal.Header>
-      <Modal.Content style={{ minWidth: 240, minHeight: 240}}>
+      }
+    >
+      <Modal.Header>
+        <Typography type="title2">{title}</Typography>
+      </Modal.Header>
+      <Modal.Content style={{ minWidth: 240, minHeight: 240 }}>
         <Image
-            style={{ width: "100%", height: 200 }}
-            source={{
-              uri: image,
-            }}
-          />
+          style={{ width: "100%", height: 200 }}
+          source={{
+            uri: image,
+          }}
+        />
         <View>
           <Typography type="title4">Ingredients</Typography>
-          <View style={{paddingHorizontal: 8}}>
-          {ingredients.map(({name, quantity}, index) => (
-            <Typography>{name}: {quantity}</Typography>
-          ))}
+          <View style={{ paddingHorizontal: 8 }}>
+            {ingredients.map(({ name, quantity }, index) => (
+              <Typography>
+                {name}: {quantity}
+              </Typography>
+            ))}
           </View>
-        <Typography type="title4">Description</Typography>
-          <View style={{paddingHorizontal: 8}}>
-        <Typography>{`${description}`}</Typography>
+          <Typography type="title4">Description</Typography>
+          <View style={{ paddingHorizontal: 8 }}>
+            <Typography>{`${description}`}</Typography>
           </View>
-        <Typography type="title4">Instructions</Typography>
-          <View style={{paddingHorizontal: 8}}>
-        <Typography>{`${instruction}`}</Typography>
+          <Typography type="title4">Instructions</Typography>
+          <View style={{ paddingHorizontal: 8 }}>
+            <Typography>{`${instruction}`}</Typography>
           </View>
-          </View>
+        </View>
       </Modal.Content>
     </Modal>
-
   );
 }
