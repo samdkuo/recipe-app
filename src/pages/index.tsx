@@ -1,13 +1,11 @@
 import React from "react";
 import { Image, View } from "react-native";
-import Layout from "../layout/Layout";
-import { Pill, Typography, Grid } from "../components/index";
-import { Search } from "semantic-ui-react";
+import { Pill, Typography, Grid, TextInput } from "../components/index";
 
 const Home = () => {
   return (
     <View>
-      <Search />
+      <TextInput placeholder="Search..." />
       <Grid numColumns={6} gap={16}>
         {[
           "Breakfast",

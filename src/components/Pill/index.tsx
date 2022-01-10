@@ -21,7 +21,6 @@ export function Pill({ children, icon, onPress = () => {}, style }: pillProps) {
           borderColor: colors.primary,
           borderWidth: 1,
           borderRadius: 20,
-          justifyContent: "center",
           alignItems: "center",
         },
         style,

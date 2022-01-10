@@ -13,7 +13,16 @@ const Layout = ({ children, routes }: { children: any; routes: any }) => {
       }}
     >
       <Navigation routes={routes} />
-      <View style={{ paddingTop: 16 }}>{children}</View>
+      <View
+        style={{
+          paddingTop: 16,
+          maxWidth: 1000,
+          width: "100%",
+          margin: "auto",
+        }}
+      >
+        {children}
+      </View>
     </View>
   );
 };
