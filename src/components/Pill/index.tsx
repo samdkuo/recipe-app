@@ -1,7 +1,8 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { Pressable, StyleProp, ViewStyle } from "react-native";
 import { Typography } from "..";
 import { colors } from "../../theme/colors";
+import { PressableState } from "./types";
 
 interface pillProps {
   children: string | ReactNode;
@@ -11,10 +12,13 @@ interface pillProps {
 }
 
 export function Pill({ children, icon, onPress = () => {}, style }: pillProps) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <Pressable
       onPress={onPress}
-      style={[
+      onTouchStart={() => setHovered(true)}
+      style={({ pressed, hovered }: PressableState) => [
         {
           paddingHorizontal: 16,
           paddingVertical: 4,
@@ -22,12 +26,16 @@ export function Pill({ children, icon, onPress = () => {}, style }: pillProps) {
           borderWidth: 1,
           borderRadius: 20,
           alignItems: "center",
+          backgroundColor: pressed || hovered ? colors.primary : "none",
+          opacity: pressed ? 0.7 : 1,
         },
         style,
       ]}
     >
       {typeof children === "string" ? (
-        <Typography>{children}</Typography>
+        <Typography style={{ color: hovered ? colors.white : colors.gray800 }}>
+          {children}
+        </Typography>
       ) : (
         children
       )}

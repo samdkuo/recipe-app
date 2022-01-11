@@ -9,6 +9,7 @@ const Home = () => {
         height: "100%",
         width: "100%",
         alignContent: "center",
+        paddingTop: 100,
       }}
     >
       <Image
