@@ -12,13 +12,10 @@ interface pillProps {
 }
 
 export function Pill({ children, icon, onPress = () => {}, style }: pillProps) {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <Pressable
       onPress={onPress}
-      onTouchStart={() => setHovered(true)}
-      style={({ pressed, hovered }: PressableState) => [
+      style={({ hovered }: PressableState) => [
         {
           paddingHorizontal: 16,
           paddingVertical: 4,
@@ -26,14 +23,14 @@ export function Pill({ children, icon, onPress = () => {}, style }: pillProps) {
           borderWidth: 1,
           borderRadius: 20,
           alignItems: "center",
-          backgroundColor: pressed || hovered ? colors.primary : "none",
-          opacity: pressed ? 0.7 : 1,
+          backgroundColor: colors.primary,
+          opacity: hovered ? 0.7 : 1,
         },
         style,
       ]}
     >
       {typeof children === "string" ? (
-        <Typography style={{ color: hovered ? colors.white : colors.gray800 }}>
+        <Typography color="white" font="600">
           {children}
         </Typography>
       ) : (
