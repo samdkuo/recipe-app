@@ -12,6 +12,7 @@ import { Typography } from "..";
 
 interface props extends Omit<RNTextInputProps, "style"> {
   label?: string;
+  placeholder?: string;
   multi?: boolean;
   textInputProps?: RNTextInputProps;
   style?: StyleProp<ViewStyle>;
@@ -19,15 +20,17 @@ interface props extends Omit<RNTextInputProps, "style"> {
 
 export const TextInput = ({
   label,
+  placeholder,
   multi = false,
   textInputProps = {},
   style,
 }: props) => {
   return (
-    <View style={{ marginBottom: 8 }}>
+    <View style={{ marginBottom: 8, flex: 1 }}>
       <Typography style={styles.label}>{label}</Typography>
       <RNTextInput
         {...textInputProps}
+        placeholder={placeholder}
         style={[styles.input, style]}
         multiline={multi}
         numberOfLines={multi ? 4 : 1}
