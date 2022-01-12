@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
-import { RecipeCard, RecipeForm, Grid } from "../components";
-import { Button, Modal } from "semantic-ui-react";
+import { RecipeCard, RecipeForm, Grid, Button } from "../components";
+import { Modal } from "semantic-ui-react";
 import { useWindowDimensionsQuery, useModalState } from "../hooks";
 import { fetchRecipeEntries } from "../requests/recipe";
 
@@ -10,8 +10,9 @@ const Home = () => {
 
   React.useEffect(() => {
     fetchRecipeEntries().then((response) => {
-      console.log(response);
-      setRecipes(response);
+      if (response) {
+        setRecipes(response);
+      }
     });
   }, []);
 
@@ -40,19 +41,31 @@ const Home = () => {
         gap={16}
         style={{ justifyContent: "center" }}
       >
-        {recipes.map(({ name, totalIngredients, cooktime, image, id, description, instruction }, index) => (
-          <RecipeCard
-            key={index}
-            id={id}
-            title={name}
-            totalIngredients={totalIngredients}
-            cookTime={cooktime}
-            image={image}
-            description={description}
-            instruction={instruction}
-
-          />
-        ))}
+        {recipes.map(
+          (
+            {
+              name,
+              totalIngredients,
+              cooktime,
+              image,
+              id,
+              description,
+              instruction,
+            },
+            index
+          ) => (
+            <RecipeCard
+              key={index}
+              id={id}
+              title={name}
+              totalIngredients={totalIngredients}
+              cookTime={cooktime}
+              image={image}
+              description={description}
+              instruction={instruction}
+            />
+          )
+        )}
       </Grid>
     </View>
   );
