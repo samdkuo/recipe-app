@@ -33,7 +33,7 @@ const Home = () => {
             "Dessert",
             "Drinks",
           ].map((category, index) => (
-            <Pill>{category}</Pill>
+            <Pill style={{ minWidth: 100 }}>{category}</Pill>
           ))}
         </Grid>
       </View>
