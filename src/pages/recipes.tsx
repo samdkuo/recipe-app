@@ -10,6 +10,7 @@ const Home = () => {
 
   React.useEffect(() => {
     fetchRecipeEntries().then((response) => {
+      console.log(response);
       if (response) {
         setRecipes(response);
       }

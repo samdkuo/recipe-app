@@ -4,8 +4,6 @@ import { Formik } from "formik";
 import { colors } from "../../theme/colors";
 import { Typography, TextInput, Button } from "../index";
 
-interface RecipeFormProps {}
-
 const IngredientInput = (handleSubmit: any) => {
   return (
     <View>
@@ -54,9 +52,8 @@ interface Recipe {
   directions: string;
 }
 
-export function RecipeForm({}: RecipeFormProps) {
+export function RecipeForm() {
   const [recipeList, setRecipeList] = React.useState<Array<Recipe>>([]);
-
   const [ingredientsList, setIngredientsList] = React.useState<
     Array<Ingredient>
   >([]);
@@ -79,7 +76,7 @@ export function RecipeForm({}: RecipeFormProps) {
         initialValues={{
           name: "",
           description: "",
-          ingredients: [],
+          // ingredients: [],
           directions: "",
         }}
         onSubmit={handleSubmit}
@@ -92,13 +89,13 @@ export function RecipeForm({}: RecipeFormProps) {
             <TextInput label="description" multi style={{ height: 60 }} />
             <IngredientInput handleSubmit={handleIngredientSubmit} />
 
-            <View>
+            {/* <View>
               {ingredientsList.map((ingredient, index) => (
                 <Typography
                   key={index}
                 >{`${ingredient.name} ${ingredient.quantity}`}</Typography>
               ))}
-            </View>
+            </View> */}
             <TextInput label="directions" multi style={{ height: 200 }} />
 
             <Button onPress={() => handleSubmit(values)}>Submit</Button>

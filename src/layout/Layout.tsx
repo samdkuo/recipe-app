@@ -18,7 +18,7 @@ const Layout = ({ children, routes }: { children: any; routes: any }) => {
           width: "100%",
           height: `calc(100vh - ${dimensions.headerHeight}px)`,
           margin: "auto",
-          padding: 16,
+          paddingHorizontal: 32,
         }}
       >
         {children}

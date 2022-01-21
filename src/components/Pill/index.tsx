@@ -17,7 +17,6 @@ export function Pill({ children, icon, onPress = () => {}, style }: pillProps) {
       onPress={onPress}
       style={({ hovered }: PressableState) => [
         {
-          // paddingHorizontal: 16,
           paddingVertical: 4,
           borderColor: colors.primary,
           borderWidth: 1,
